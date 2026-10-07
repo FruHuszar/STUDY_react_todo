@@ -1,17 +1,15 @@
-import type { AllapotTipus, TodoTipus } from '../adat'
 import Feladat from './Feladat'
+import { useTodoContext } from '../contexts/TodoContext'
 
-interface FeladatokProps {
-  lista: TodoTipus[],
-  setAllapot: (index: number, allapot: AllapotTipus) => void
-}
+function Feladatok() {
+  /* listát a contextből fogjuk megkapni: */
+  const {lista} = useTodoContext();
 
-function Feladatok({ lista, setAllapot }: FeladatokProps) {
   return (
     <div>
       {
         lista.map((elem, index) => {
-          return (<Feladat elem={elem} setAllapot={setAllapot} index={index} key={elem.id} />)
+          return (<Feladat elem={elem} index={index} key={elem.id} />)
         })
       }
     </div>
