@@ -1,0 +1,11 @@
+.todo {
+  color: var(--text-h);
+}
+
+.todo .allapot {
+  color: var(--accent);
+}
+
+.todo button {
+  border: none;
+}
